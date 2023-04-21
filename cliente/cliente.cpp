@@ -9,10 +9,8 @@
 #include <iostream>
 #include <string>
 #include "ContaC.h"
-#include <orbsvcs/CosNamingC.h>
 
 using namespace std;
-using namespace CosNaming;
 
 int main(int argc, char* argv[])
 {
@@ -29,18 +27,7 @@ int main(int argc, char* argv[])
 		CORBA::Object_ptr tmp_ref;
 		Conta_var account;
 
-		tmp_ref = orb->resolve_initial_references("NameService");
-		NamingContext_var sn = NamingContext::_narrow(tmp_ref);
-
-		Name nome(1);
-		nome.length(1);
-		nome[0].id = CORBA::string_dup(argv[1]);
-		tmp_ref = sn->resolve(nome);
-		
-
-		//referência  do arquivo
-		//tmp_ref = orb->string_to_object(argv[1]);
-
+		tmp_ref = orb->string_to_object(argv[1]);
 		account = Conta::_narrow(tmp_ref);
 
 		// 3. Use account
@@ -99,4 +86,3 @@ int main(int argc, char* argv[])
 
 	return 0;
 }
-

@@ -1,0 +1,22 @@
+//
+// Interface Conta
+//
+//   Arquitetura de Sistemas Distribuídos, Paralelos e Concorrentes
+//   Escola Politécnica - PUCPR
+//   Prof. Luiz Lima Jr.
+//
+
+exception SaldoInsuficiente {};
+
+interface Conta {
+
+    // atributos
+    readonly attribute string id;
+    readonly attribute float saldo;
+
+    // operações
+    void deposito(in float valor);
+    void saque(in float valor) raises (SaldoInsuficiente);
+    void transfere(in float valor, in Conta dest) raises (SaldoInsuficiente);
+    oneway void shutdown(in string senha);
+};
