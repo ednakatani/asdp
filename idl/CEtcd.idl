@@ -1,0 +1,9 @@
+exception InvalidKey {};
+
+interface CEtcd {
+    readonly attribute string id;
+    void put(in string key, in string val);
+    string get(in string key) raises (InvalidKey);
+    void del(in string key) raises (InvalidKey);
+};
+
