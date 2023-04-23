@@ -39,38 +39,4 @@ void Conta_i::deposito (::CORBA::Float amount)
     saldo_ += amount;
 }
 
-void Conta_i::saque (::CORBA::Float amount)
-{
-    if (amount < 0)
-		amount = -amount;
-    cout << "* saque(" << amount << ")" << flush;
-    if (amount > saldo_) {
-		cout << " [SaldoInsuficiente]" << endl;
-		throw SaldoInsuficiente();
-    }
 
-    saldo_ -= amount;
-    cout << endl;
-}
-
-void Conta_i::transfere (::CORBA::Float amount, Conta_ptr dest)
-{
-    cout << "* transfere(" << amount << ","
-    	<< dest->id() << ")" << endl;
-    this->saque(amount);
-    try {
-		dest->deposito(amount);
-    } catch (CORBA::Exception&) {
-		cerr << "\tErro no deposito. Desfazendo saque." << endl;
-		this->deposito(amount);
-    }
-}
-
-void Conta_i::shutdown (const string password)
-{
-	if (password == "ASDPC") {
-	    cout << "* shutdown()" << endl;
-    	orb->shutdown();
-    } else
-    	cout << "* shutdown(): senha invalida" << endl;
-}

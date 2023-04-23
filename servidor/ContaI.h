@@ -17,9 +17,6 @@ public:
     virtual std::string id ();
     virtual ::CORBA::Float saldo ();
     virtual void deposito (::CORBA::Float amount);
-    virtual void saque (::CORBA::Float amount);
-    virtual void transfere (::CORBA::Float amount, Conta_ptr dest);
-    virtual void shutdown (const std::string password);
 
 private:
 

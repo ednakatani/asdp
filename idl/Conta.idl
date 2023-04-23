@@ -16,7 +16,4 @@ interface Conta {
 
     // operações
     void deposito(in float valor);
-    void saque(in float valor) raises (SaldoInsuficiente);
-    void transfere(in float valor, in Conta dest) raises (SaldoInsuficiente);
-    oneway void shutdown(in string senha);
 };

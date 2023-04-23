@@ -38,7 +38,7 @@ int main(int argc, char* argv[])
 		string dest_ior;
 
 		cout << "Commandos:\n\tsaldo\n\tid\n\tdeposito\n"
-		<< "\tsaque\n\ttransfere\n\tshutdown\n\tfim" << endl;
+		<< "\tfim" << endl;
 
 		do {
 			cout << "> ";
@@ -51,30 +51,7 @@ int main(int argc, char* argv[])
 				cin >> amount;
 				account->deposito(amount);
 				cout << "\tOK" << endl;
-			} else if (command == "saque") {
-				cin >> amount;
-				try {
-					account->saque(amount);
-					cout << "\tOK" << endl;
-				} catch (SaldoInsuficiente&) {
-					cout << "\t[SaldoInsuficiente]" << endl;
-				}
-			} else if (command == "transfere") {
-				cin >> amount;
-				cin >> dest_ior;
-				try {
-					tmp_ref = orb->string_to_object(dest_ior.c_str());
-					Conta_var dest = Conta::_narrow(tmp_ref);
-					account->transfere(amount,dest);
-					cout << "\tOK" << endl;
-				} catch (SaldoInsuficiente&) {
-					cout << "\t[SaldoInsuficiente]" << endl;
-				}
-			} else if (command == "shutdown") {
-				cin >> password;
-				account->shutdown(password);
-				command = "fim";	// exits client too
-			}
+			} 
 
 		} while (command != "fim");
 
