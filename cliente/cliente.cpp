@@ -45,9 +45,9 @@ int main(int argc, char* argv[])
 			cout << "> ";
 			cin >> command;
 			
-			if (command == "id") 
+			if (command == "id_") 
 			{	
-				cout << "\tId = " << dictionary->id() << endl;
+				cout << "\tId = " << dictionary->id_() << endl;
 				cout << "\tOK" << endl;	
 			} 
 			else if (command == "put") 
