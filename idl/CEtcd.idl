@@ -3,10 +3,10 @@ exception InvalidKey {};
     interface CEtcd {
 
         // atributos
-        readonly attribute string id_;
+        readonly attribute string id;
 
         //operações
-        string id();
+        string id_();
         void put(in string key, in string val);
         string get(in string key) raises (InvalidKey);
         void del(in string key) raises (InvalidKey);

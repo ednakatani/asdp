@@ -25,7 +25,7 @@ public:
 
 private:
 
-    std::string id_;
+    std::string id;
     std::map<std::string, std::string> table_;
 };
 
