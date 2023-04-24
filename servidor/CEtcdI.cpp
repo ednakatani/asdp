@@ -9,12 +9,14 @@ extern CORBA::ORB_var orb;
 CEtcd_impl::CEtcd_impl (const string& account_id)
 {
     id_ = account_id;
+    table_["a"] = 0;
 }
 
 string CEtcd_impl::id ()
 {
     cout <<  "* Retornando ID" << endl;
     return id_;
+    //return CORBA::string_dup(id_.c_str());	// duplica pois strings possuem tamanho variável
 }
 
 
@@ -58,7 +60,4 @@ void CEtcd_impl::shutdown(const string& password)
     } else
     	cout << "* shutdown(): senha invalida" << endl;
 }
-
-
-
 

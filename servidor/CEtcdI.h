@@ -18,11 +18,11 @@ public:
     CEtcd_impl(const string& account_id);
     virtual ~CEtcd_impl () {}
     
-    virtual string id();
-    virtual void put(const string& key, const string& val);
-    virtual string get(const string& key);
-    virtual void del(const string& key);
-    virtual void shutdown(const string& password);
+    virtual string id() override;
+    virtual void put(const string& key, const string& val) override;
+    virtual string get(const string& key) override;
+    virtual void del(const string& key) override;
+    virtual void shutdown(const string& password) override;
 
 private:
 
