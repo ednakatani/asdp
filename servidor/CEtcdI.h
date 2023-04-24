@@ -10,18 +10,18 @@
 #pragma once
 #endif
 
-class CEtcd_impl : POA_CEtcd
+class CEtcd_impl : public virtual POA_CEtcd
 {
 public:
     
     CEtcd_impl(const std::string& account_id);
-    virtual ~CEtcd_impl () {}
+    ~CEtcd_impl () {}
     
-    virtual std::string id();
-    virtual void put(std::string key, std::string val);
-    virtual std::string get(std::string key);
-    virtual void del(std::string key);
-    virtual void shutdown(std::string password);
+    std::string id();
+    void put(std::string key, std::string val);
+    std::string get(std::string key);
+    void del(std::string key);
+    void shutdown(std::string password);
 
 private:
 
