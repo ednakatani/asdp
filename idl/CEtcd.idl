@@ -3,7 +3,7 @@ exception InvalidKey {};
     interface CEtcd {
 
         // atributos
-        readonly attribute string id;
+        readonly attribute string id_;
 
         //operações
         string id();
