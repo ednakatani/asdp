@@ -11,7 +11,7 @@ using namespace std;
 #pragma once
 #endif
 
-class CEtcd_impl : public virtual POA_CEtcd::CEtcd 
+class CEtcd_impl : public virtual POA_CEtcd
 {
 public:
     
