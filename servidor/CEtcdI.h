@@ -11,7 +11,8 @@ using namespace std;
 #pragma once
 #endif
 
-class CEtcd_impl : public virtual POA_CEtd::CEtcd {
+class CEtcd_impl : public virtual POA_CEtcd::CEtcd 
+{
 public:
     
     CEtcd_impl(const string& account_id);
@@ -21,6 +22,7 @@ public:
     virtual void put(const string& key, const string& val);
     virtual string get(const string& key);
     virtual void del(const string& key);
+    virtual void shutdown(const string& password);
 
 private:
 

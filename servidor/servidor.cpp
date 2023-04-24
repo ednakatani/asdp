@@ -43,7 +43,7 @@ int main(int argc, char* argv[])
 
 		// 4. Registra servos no POA, criando objetos distribuídos
 		cout << "Registrando servos no POA (criando objetos CORBA)" << endl;
-		Etcd_var account = acc_i._this(); // returns reference to the object
+		CEtcd_var account = acc_i._this(); // returns reference to the object
 
 		// 5. Publica IOR
 		cout <<  "Publicando IOR (arquivo \"" << argv[1] << "\")" << endl;

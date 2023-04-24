@@ -25,10 +25,10 @@ int main(int argc, char* argv[])
 
 		// 2. Obtain object reference
 		CORBA::Object_ptr tmp_ref;
-		Etcd_var dictionary;
+		CEtcd_var dictionary;
 
 		tmp_ref = orb->string_to_object(argv[1]);
-		dictionary = Etcd::_narrow(tmp_ref);
+		dictionary = CEtcd::_narrow(tmp_ref);
 
 		// 3. Use dictionary
 
@@ -36,8 +36,9 @@ int main(int argc, char* argv[])
 		string dest_ior;
 		string key;
 		string val;
+		string password;
 
-		cout << "Commandos:\n\tid\n\tput(key,val)\n\tget(key)\n\tdel(key)\n\tend" 
+		cout << "Commandos:\n\tid\n\tput(key,val)\n\tget(key)\n\tdel(key)\n\tend\n\tshutdown" 
 			<< endl;
 
 		do {
@@ -80,6 +81,12 @@ int main(int argc, char* argv[])
 				
 				cout << "\tOK" << endl;	
 			} 
+			else if (command == "shutdown") 
+			{
+				cin >> password;
+				dictionary->shutdown(password);
+				command = "fim";	// exits client too
+			}
 
 		} while (command != "end");
 
