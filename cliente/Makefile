@@ -66,7 +66,6 @@ LINK.cpp = $(CXX) $(LDFLAGS)
 %C.cpp:%.idl
 	@echo -e "Gerando stubs/skeletons para $(notdir $<)"
 	@tao_idl -Gstl -w -I$(IDLDIR) -o $(IDLDIR) $< 2> /dev/null
-	@echo -e "NAAAAOOO É AQUI O ERRO"
 
 # Standard targets.
 
