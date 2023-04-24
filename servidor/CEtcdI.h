@@ -17,8 +17,8 @@ public:
     CEtcd_impl(const std::string& account_id);
     ~CEtcd_impl () {}
     
-    virtual std::string id_() override;
-    virtual std::string id();
+    //virtual std::string id_() override;
+    //virtual std::string id();
     virtual void put(std::string key, std::string val);
     virtual std::string get(std::string key);
     virtual void del(std::string key);
@@ -26,7 +26,7 @@ public:
 
 private:
 
-    std::string id_;
+    //std::string id_;
     std::map<std::string, std::string> table_;
 };
 
