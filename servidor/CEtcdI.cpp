@@ -6,7 +6,7 @@ using namespace std;
 
 extern CORBA::ORB_var orb;
 
-CEtcd_impl::CEtcd_impl (const std::string& account_id)
+CEtcd_impl::CEtcd_impl (const std::string account_id)
 {
     id_ = account_id;
     table_["a"] = "a";
@@ -20,7 +20,7 @@ string CEtcd_impl::id ()
 }
 
 
-void CEtcd_impl::put(std::string& key, std::string& val) 
+void CEtcd_impl::put(std::string key, std::string val) 
 {
     cout <<  "* Inserindo <chave,valor>: " << endl;
     table_[key] = val;
@@ -28,7 +28,7 @@ void CEtcd_impl::put(std::string& key, std::string& val)
 }
 
 
-std::string CEtcd_impl::get(std::string& key) 
+std::string CEtcd_impl::get(std::string key) 
 {
     cout <<  "* Retornando valor da chave: " << endl;
     if (this->table_.find(key) == this->table_.end()) 
@@ -40,7 +40,7 @@ std::string CEtcd_impl::get(std::string& key)
 }
 
 
-void CEtcd_impl::del(std::string& key) 
+void CEtcd_impl::del(std::string key) 
 {
     cout <<  "* Deletando chave" << endl;
     if (table_.find(key) == table_.end()) 
@@ -52,7 +52,7 @@ void CEtcd_impl::del(std::string& key)
 }
 
 
-void CEtcd_impl::shutdown(string& password)
+void CEtcd_impl::shutdown(string password)
 {
 	if (password == "ASDPC") {
 	    cout << "* shutdown()" << endl;
