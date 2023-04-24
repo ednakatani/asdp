@@ -4,7 +4,6 @@ interface Etcd {
 
     // atributos
     readonly attribute string id;
-    attribute map<string,string> table_;
 
     //operações
     string id();
