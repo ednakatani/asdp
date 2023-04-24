@@ -15,7 +15,7 @@ CEtcd_impl::CEtcd_impl (const std::string& account_id)
 string CEtcd_impl::id_()
 {
     cout <<  "* Retornando ID" << endl;
-    return this->id_;
+    return this->id;
     //return CORBA::string_dup(id_.c_str());	// duplica pois strings possuem tamanho variável
 }
 
