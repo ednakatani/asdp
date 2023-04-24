@@ -5,7 +5,7 @@ struct table {
     string value;
 }
 
-interface Etcd {
+interface CEtcd {
 
 
     // atributos

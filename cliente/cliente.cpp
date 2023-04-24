@@ -25,10 +25,10 @@ int main(int argc, char* argv[])
 
 		// 2. Obtain object reference
 		CORBA::Object_ptr tmp_ref;
-		Etcd_var dictionary;
+		CEtcd_var dictionary;
 
 		tmp_ref = orb->string_to_object(argv[1]);
-		dictionary = Etcd::_narrow(tmp_ref);
+		dictionary = CEtcd::_narrow(tmp_ref);
 
 		// 3. Use dictionary
 
