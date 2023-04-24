@@ -57,7 +57,9 @@ int main(int argc, char* argv[])
 				cout << "Insert value: " ;
 				cin >> val;
 				
-				cout << "\tput = " << dictionary->put(key, val) << endl;
+				cout << "\tput = " << endl;
+				dictionary->put(key, val);
+
 				cout << "\tOK" << endl;	
 			} 
 			else if (command == "get") 
@@ -65,7 +67,7 @@ int main(int argc, char* argv[])
 				cout << "Insert key: ";
 				cin >> key;
 
-				dictionary->get(key);
+				cout << dictionary->get(key) << endl;
 				
 				cout << "\tOK" << endl;	
 			} 
