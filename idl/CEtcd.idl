@@ -4,7 +4,7 @@ interface CEtcd {
     struct pair {
         string key;
         string value;
-    }
+    };
     
     // atributos
     readonly attribute string id;
