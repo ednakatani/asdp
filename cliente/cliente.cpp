@@ -8,7 +8,7 @@
 
 #include <iostream>
 #include <string>
-#include "ContaC.h"
+#include "CEtcdC.h"
 
 using namespace std;
 
@@ -25,38 +25,65 @@ int main(int argc, char* argv[])
 
 		// 2. Obtain object reference
 		CORBA::Object_ptr tmp_ref;
-		Conta_var account;
+		CEtcd_var dictionary;
 
 		tmp_ref = orb->string_to_object(argv[1]);
-		account = Conta::_narrow(tmp_ref);
+		dictionary = CEtcd::_narrow(tmp_ref);
 
-		// 3. Use account
+		// 3. Use dictionary
 
 		string command;
-		string password;
-		CORBA::Float amount;
 		string dest_ior;
+		string key;
+		string val;
 
-		cout << "Commandos:\n\tsaldo\n\tid\n\tdeposito\n"
-		<< "\tfim" << endl;
+		cout << "Commandos:\n\tid\n\tput(key,val)\n\tget(key)\n\tdel(key)\n\tend" 
+			<< endl;
 
 		do {
 			cout << "> ";
 			cin >> command;
-			if (command == "saldo") {
-				cout << "\tSaldo = " << account->saldo() << endl;
-			} else if (command == "id") {
-				cout << "\tId = " << account->id() << endl;
-			} else if (command == "deposito") {
-				cin >> amount;
-				account->deposito(amount);
-				cout << "\tOK" << endl;
+			
+			if (command == "id") 
+			{	
+				cout << "\tId = " << dictionary->id() << endl;
+				cout << "\tOK" << endl;	
+			} 
+			else if (command == "put") 
+			{	
+				cout << "Insert key: " ;
+				cin >> key;
+				
+				cout << "Insert value: " ;
+				cin >> val;
+				
+				cout << "\tput = " << dictionary->put(key, val) << endl;
+				cout << "\tOK" << endl;	
+			} 
+			else if (command == "get") 
+			{	
+				cout << "Insert key: "
+				cin >> key;
+
+				dictionary->get(key);
+				
+				cout << "\tOK" << endl;	
+			} 
+			else if (command == "del") 
+			{	
+				cout << "Insert key to delete: "
+				cin >> key;
+
+				dictionary->del(key);
+				
+				cout << "\tOK" << endl;	
 			} 
 
-		} while (command != "fim");
+		} while (command != "end");
 
 		// 4. Destroi ORB
 		orb->destroy();
+
 	} catch (CORBA::Exception& e) {
 		cerr << "CORBA EXCEPTION:" << e << endl;
 	}
