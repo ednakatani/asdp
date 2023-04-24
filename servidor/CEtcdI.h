@@ -17,11 +17,11 @@ public:
     CEtcd_impl(const std::string& account_id);
     ~CEtcd_impl () {}
     
-    std::string id();
-    void put(std::string key, std::string val);
-    std::string get(std::string key);
-    void del(std::string key);
-    void shutdown(std::string password);
+    virtual std::string id_() override;
+    virtual void put(std::string key, std::string val);
+    virtual std::string get(std::string key);
+    virtual void del(std::string key);
+    virtual void shutdown(std::string password);
 
 private:
 

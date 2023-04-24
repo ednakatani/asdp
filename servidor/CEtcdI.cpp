@@ -20,7 +20,7 @@ string CEtcd_impl::id ()
 }
 
 
-string CEtcd_impl::id_() { return "";}
+string POA_CEtcd::id_() { return "";}
 
 
 void CEtcd_impl::put(std::string key, std::string val) 
