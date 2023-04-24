@@ -8,14 +8,14 @@ extern CORBA::ORB_var orb;
 
 CEtcd_impl::CEtcd_impl (const std::string& account_id)
 {
-    this->id_() = account_id;
+    this->id() = account_id;
     table_["a"] = "a";
 }
 
-string CEtcd_impl::id_()
+string CEtcd_impl::id()
 {
     cout <<  "* Retornando ID" << endl;
-    return this->id;
+    return this->id_;
     //return CORBA::string_dup(id_.c_str());	// duplica pois strings possuem tamanho variável
 }
 
