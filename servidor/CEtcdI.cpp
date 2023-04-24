@@ -20,6 +20,9 @@ string CEtcd_impl::id ()
 }
 
 
+string POA_CEtcd::id_() {}
+
+
 void CEtcd_impl::put(std::string key, std::string val) 
 {
     cout <<  "* Inserindo <chave,valor>: " << endl;
