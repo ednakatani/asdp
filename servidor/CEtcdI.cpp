@@ -8,7 +8,7 @@ extern CORBA::ORB_var orb;
 
 CEtcd_impl::CEtcd_impl (const std::string& account_id)
 {
-    this->id_ = account_id;
+    this->id_() = account_id;
     table_["a"] = "a";
 }
 
