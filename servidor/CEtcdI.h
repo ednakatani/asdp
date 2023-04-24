@@ -26,8 +26,7 @@ public:
 private:
 
     string id_;
-    //map<string, string> table_;
-    string table_;
+    map<string, string> table_;
 };
 
 #endif /* CONTAIMPL_H_  */
