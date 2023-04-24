@@ -26,7 +26,7 @@ public:
 private:
 
     std::string id_;
-    map<std::string, std::string> table_;
+    std::map<std::string, std::string> table_;
 };
 
 #endif /* CETCDIMPL_H_  */
