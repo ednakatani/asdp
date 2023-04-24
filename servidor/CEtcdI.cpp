@@ -12,7 +12,7 @@ CEtcd_impl::CEtcd_impl (const std::string& account_id)
     table_["a"] = "a";
 }
 
-string CEtcd_impl::id_ ()
+string CEtcd_impl::id ()
 {
     cout <<  "* Retornando ID" << endl;
     return this->id_;
