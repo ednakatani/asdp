@@ -45,12 +45,14 @@ int main(int argc, char* argv[])
 			cout << "> ";
 			cin >> command;
 			
+			/*
 			if (command == "id") 
 			{	
 				cout << "\tId = " << dictionary->id() << endl;
 				cout << "\tOK" << endl;	
 			} 
-			else if (command == "put") 
+			*/
+			if (command == "put") 
 			{	
 				cout << "Insert key: " ;
 				cin >> key;
