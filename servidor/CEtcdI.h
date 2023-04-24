@@ -11,16 +11,16 @@ using namespace std;
 #pragma once
 #endif
 
-class CEtcd_impl : public virtual POA_Etcd {
+class CEtcd_impl : public POA_Etcd {
 public:
     
     CEtcd_impl(const string& account_id);
-    virtual ~CEtcd_impl () {}
+    ~CEtcd_impl () {}
     
-    virtual string id();
-    virtual void put(const string& key, const string& val);
-    virtual string get(const string& key);
-    virtual void del(const string& key);
+    string id();
+    void put(const string& key, const string& val);
+    string get(const string& key);
+    void del(const string& key);
 
 private:
 
