@@ -9,13 +9,13 @@ extern CORBA::ORB_var orb;
 CEtcd_impl::CEtcd_impl (const string& account_id)
 {
     id_ = account_id;
-    table_["a"] = 0;
+    table_["a"] = "a";
 }
 
 string CEtcd_impl::id ()
 {
     cout <<  "* Retornando ID" << endl;
-    return id_;
+    return this->id_;
     //return CORBA::string_dup(id_.c_str());	// duplica pois strings possuem tamanho variável
 }
 
@@ -31,12 +31,12 @@ void CEtcd_impl::put(const string& key, const string& val)
 string CEtcd_impl::get(const string& key) 
 {
     cout <<  "* Retornando valor da chave: " << endl;
-    if (table_.find(key) == table_.end()) 
+    if (this->table_.find(key) == this->table_.end()) 
     {
         throw invalid_argument("InvalidKey");
     }
     cout <<  "* " << endl;
-    return table_[key];
+    return this->table_[key];
 }
 
 
