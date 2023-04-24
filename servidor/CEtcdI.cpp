@@ -9,6 +9,7 @@ extern CORBA::ORB_var orb;
 CEtcd_impl::CEtcd_impl (const string& account_id)
 {
     id_ = account_id;
+    table_ = map<string, string>();
 }
 
 string CEtcd_impl::id ()
