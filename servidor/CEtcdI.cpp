@@ -6,7 +6,7 @@ using namespace std;
 
 extern CORBA::ORB_var orb;
 
-CEtcd_impl::CEtcd_impl (const std::string account_id)
+CEtcd_impl::CEtcd_impl (const std::string& account_id)
 {
     id_ = account_id;
     table_["a"] = "a";
