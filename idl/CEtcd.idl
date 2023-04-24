@@ -1,11 +1,11 @@
 exception InvalidKey {};
 
-struct table {
-    string key;
-    string value;
-}
-
 interface CEtcd {
+    struct table {
+        string key;
+        string value;
+    }
+    
     // atributos
     readonly attribute string id;
     //attribute sequence<table> table_;
