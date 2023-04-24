@@ -19,10 +19,10 @@ public:
     virtual ~CEtcd_impl () {}
     
     virtual string id() override;
-    virtual void put(const string& key, const string& val) override;
-    virtual string get(const string& key) override;
-    virtual void del(const string& key) override;
-    virtual void shutdown(const string& password) override;
+    virtual void put(string& key, string& val);
+    virtual string get(string& key);
+    virtual void del(string& key);
+    virtual void shutdown(string& password);
 
 private:
 
