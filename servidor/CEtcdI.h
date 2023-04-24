@@ -5,7 +5,6 @@
 #include <string>
 #include <map>
 
-using namespace std;
 
 #if !defined (ACE_LACKS_PRAGMA_ONCE)
 #pragma once
@@ -15,19 +14,19 @@ class CEtcd_impl : public virtual POA_CEtcd
 {
 public:
     
-    CEtcd_impl(const string& account_id);
+    CEtcd_impl(const std::string& account_id);
     virtual ~CEtcd_impl () {}
     
-    virtual string id() override;
-    virtual void put(string& key, string& val) override;
-    virtual string get(string& key) override;
-    virtual void del(string& key) override;
-    virtual void shutdown(string& password) override;
+    virtual std::string id() override;
+    virtual void put(std::string& key, std::string& val) override;
+    virtual std::string get(std::string& key) override;
+    virtual void del(std::string& key) override;
+    virtual void shutdown(std::string& password) override;
 
 private:
 
-    string id_;
-    map<string, string> table_;
+    std::string id_;
+    map<std::string, std::string> table_;
 };
 
 #endif /* CETCDIMPL_H_  */
