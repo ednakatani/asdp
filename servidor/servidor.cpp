@@ -39,11 +39,11 @@ int main(int argc, char* argv[])
 
 		// 3. Instancia "servants"
 		cout << "Instanciando servant" << endl;
-		CEtcd_i acc_i(argv[1]); // account name = ior file name
+		CEtcd_impl acc_i(argv[1]); // account name = ior file name
 
 		// 4. Registra servos no POA, criando objetos distribuídos
 		cout << "Registrando servos no POA (criando objetos CORBA)" << endl;
-		CEtcd_var account = acc_i._this(); // returns reference to the object
+		Etcd_var account = acc_i._this(); // returns reference to the object
 
 		// 5. Publica IOR
 		cout <<  "Publicando IOR (arquivo \"" << argv[1] << "\")" << endl;

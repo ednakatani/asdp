@@ -25,10 +25,10 @@ int main(int argc, char* argv[])
 
 		// 2. Obtain object reference
 		CORBA::Object_ptr tmp_ref;
-		CEtcd_var dictionary;
+		Etcd_var dictionary;
 
 		tmp_ref = orb->string_to_object(argv[1]);
-		dictionary = CEtcd::_narrow(tmp_ref);
+		dictionary = Etcd::_narrow(tmp_ref);
 
 		// 3. Use dictionary
 
@@ -62,7 +62,7 @@ int main(int argc, char* argv[])
 			} 
 			else if (command == "get") 
 			{	
-				cout << "Insert key: "
+				cout << "Insert key: ";
 				cin >> key;
 
 				dictionary->get(key);
@@ -71,7 +71,7 @@ int main(int argc, char* argv[])
 			} 
 			else if (command == "del") 
 			{	
-				cout << "Insert key to delete: "
+				cout << "Insert key to delete: ";
 				cin >> key;
 
 				dictionary->del(key);
