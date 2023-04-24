@@ -10,7 +10,7 @@
 #pragma once
 #endif
 
-class CEtcd_impl : public virtual POA_CEtcd
+class CEtcd_impl : POA_CEtcd
 {
 public:
     
