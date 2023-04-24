@@ -1,5 +1,5 @@
-#ifndef CONTAIMPL_H_
-#define CONTAIMPL_H_
+#ifndef CETCDIMPL_H_
+#define CETCDIMPL_H_
 
 #include "CEtcdS.h"
 #include <string>
@@ -30,4 +30,4 @@ private:
     map<string, string> table_;
 };
 
-#endif /* CONTAIMPL_H_  */
+#endif /* CETCDIMPL_H_  */
