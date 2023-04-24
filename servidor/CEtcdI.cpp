@@ -51,5 +51,13 @@ void CEtcd_impl::del(const string& key)
 }
 
 
+void Conta_i::shutdown (const string password)
+{
+	if (password == "ASDPC") {
+	    cout << "* shutdown()" << endl;
+    	orb->shutdown();
+    } else
+    	cout << "* shutdown(): senha invalida" << endl;
+}
 
 

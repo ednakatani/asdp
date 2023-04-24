@@ -37,7 +37,7 @@ int main(int argc, char* argv[])
 		string key;
 		string val;
 
-		cout << "Commandos:\n\tid\n\tput(key,val)\n\tget(key)\n\tdel(key)\n\tend" 
+		cout << "Commandos:\n\tid\n\tput(key,val)\n\tget(key)\n\tdel(key)\n\tend\n\tshutdown" 
 			<< endl;
 
 		do {
