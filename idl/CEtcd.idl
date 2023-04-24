@@ -8,7 +8,7 @@ interface CEtcd {
     
     // atributos
     readonly attribute string id;
-    //attribute sequence<table> table_;
+    attribute sequence<table> table_;
 
     //operações
     void put(in string key, in string val);
