@@ -1,14 +1,14 @@
 exception InvalidKey {};
 
 interface CEtcd {
-    struct table {
+    struct pair {
         string key;
         string value;
     }
     
     // atributos
     readonly attribute string id;
-    attribute sequence<table> table_;
+    attribute pair table_[];
 
     //operações
     void put(in string key, in string val);
