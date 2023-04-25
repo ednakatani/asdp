@@ -39,15 +39,15 @@ int main(int argc, char* argv[])
 
 		// 3. Instancia "servants"
 		cout << "Instanciando servant" << endl;
-		CEtcd_impl acc_i(argv[1]); // account name = ior file name
+		CEtcd_impl acc_i(argv[1]); // dictionary name = ior file name
 
 		// 4. Registra servos no POA, criando objetos distribuídos
 		cout << "Registrando servos no POA (criando objetos CORBA)" << endl;
-		CEtcd_var account = acc_i._this(); // returns reference to the object
+		CEtcd_var dictionary = acc_i._this(); // returns reference to the object
 
 		// 5. Publica IOR
 		cout <<  "Publicando IOR (arquivo \"" << argv[1] << "\")" << endl;
-		CORBA::String_var ior = orb->object_to_string(account.in());
+		CORBA::String_var ior = orb->object_to_string(dictionary.in());
 		ofstream arq_ior(argv[1]);
 		arq_ior << ior << endl;
 		arq_ior.close();

@@ -1,3 +1,9 @@
+/**
+ * GRUPO:
+ * Eduardo Klein Nakatani
+ * Marco Aurélio Silva de Souza Júnior
+ */
+
 exception InvalidKey {};
 
     interface CEtcd {
