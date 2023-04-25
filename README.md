@@ -1,4 +1,4 @@
-# CONTA BANCÁRIA - SISTEMA DISTRIBUÍDO BÁSICO CORBA
+# T1 SERVIDOR DE NOMES
 
 *Arquiteturas de Sistemas Distribuídos, Paralelos e Concorrentes*
 *Escola Politécnica - PUCPR*
